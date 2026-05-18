@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rohit Kumar Goel — Head of Technical Operations</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=DM+Mono:wght@300;400&family=Figtree:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --navy: #0a0f1e;
+    --navy-mid: #111827;
+    --navy-light: #1a2540;
+    --accent: #c9a96e;
+    --accent-dim: rgba(201,169,110,0.15);
+    --accent-glow: rgba(201,169,110,0.08);
+    --text: #e8e4dc;
+    --text-dim: #8a8fa8;
+    --text-muted: #4a5068;
+    --border: rgba(201,169,110,0.2);
+    --border-subtle: rgba(255,255,255,0.06);
+    --white: #ffffff;
+    --green: #4ade80;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Figtree', sans-serif;
+    background: var(--navy);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── NOISE TEXTURE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.4;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 1rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(10,15,30,0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    color: var(--accent);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .nav-links a:hover { color: var(--accent); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 6rem 3rem 4rem;
+    position: relative;
+    gap: 4rem;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    top: 20%;
+    right: 0;
+    width: 50%;
+    height: 60%;
+    background: radial-gradient(ellipse at 70% 50%, rgba(201,169,110,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-content { position: relative; z-index: 1; }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.4rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 2rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 2rem;
+    background: var(--accent-glow);
+    animation: fadeUp 0.8s ease both;
+  }
+
+  .hero-badge::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--green);
+    box-shadow: 0 0 8px var(--green);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  .hero-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.5rem;
+    animation: fadeUp 0.8s ease 0.1s both;
+  }
+
+  .hero-name em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .hero-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 2rem;
+    animation: fadeUp 0.8s ease 0.2s both;
+  }
+
+  .hero-summary {
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--text-dim);
+    line-height: 1.8;
+    max-width: 520px;
+    margin-bottom: 2.5rem;
+    animation: fadeUp 0.8s ease 0.3s both;
+  }
+
+  .hero-certs {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+    animation: fadeUp 0.8s ease 0.35s both;
+  }
+
+  .cert-badge {
+    padding: 0.35rem 0.85rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    background: var(--accent-glow);
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    animation: fadeUp 0.8s ease 0.4s both;
+  }
+
+  .btn-primary,
+  .btn-outline {
+    padding: 0.9rem 2rem;
+    border-radius: 4px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    white-space: nowrap;
+  }
+
+  .btn-primary {
+    background: var(--accent);
+    color: var(--navy);
+    border: 1px solid var(--accent);
+  }
+
+  .btn-primary:hover {
+    background: #e0bc82;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(201,169,110,0.3);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border-subtle);
+  }
+
+  .btn-outline:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateY(-2px);
+  }
+
+  /* ── HERO PHOTO ── */
+  .hero-photo-wrap {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeUp 0.8s ease 0.2s both;
+  }
+
+  .hero-photo-wrap::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--accent) 0%, transparent 50%, var(--accent) 100%);
+    opacity: 0.4;
+    animation: borderRotate 6s linear infinite;
+  }
+
+  @keyframes borderRotate {
+    0% { opacity: 0.3; }
+    50% { opacity: 0.6; }
+    100% { opacity: 0.3; }
+  }
+
+  .hero-photo {
+    width: 100%;
+    max-width: 420px;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+    filter: grayscale(15%) contrast(1.05);
+    border: 1px solid var(--border);
+  }
+
+  .photo-stats {
+    position: absolute;
+    bottom: -1rem;
+    left: -1rem;
+    background: var(--navy-light);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    z-index: 2;
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .stat { text-align: center; }
+
+  .stat-num {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--accent);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    display: block;
+    margin-top: 0.2rem;
+  }
+
+  /* ── SECTION BASE ── */
+  section {
+    padding: 6rem 3rem;
+    position: relative;
+  }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    max-width: 60px;
+    height: 1px;
+    background: var(--border);
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+
+  .section-title em { font-style: italic; color: var(--accent); }
+
+  /* ── METRICS STRIP ── */
+  .metrics {
+    background: var(--navy-light);
+    border-top: 1px solid var(--border-subtle);
+    border-bottom: 1px solid var(--border-subtle);
+    padding: 3rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+
+  .metric-item {
+    text-align: center;
+    padding: 1.5rem;
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    background: rgba(201,169,110,0.03);
+    transition: all 0.3s;
+  }
+
+  .metric-item:hover {
+    border-color: var(--border);
+    background: var(--accent-glow);
+    transform: translateY(-4px);
+  }
+
+  .metric-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: var(--accent);
+    line-height: 1;
+    display: block;
+  }
+
+  .metric-unit {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--accent);
+  }
+
+  .metric-desc {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    margin-top: 0.5rem;
+    font-weight: 300;
+  }
+
+  /* ── EXPERIENCE ── */
+  .experience-wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .exp-grid {
+    display: grid;
+    gap: 0;
+    position: relative;
+  }
+
+  .exp-grid::before {
+    content: '';
+    position: absolute;
+    left: 11px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--border), transparent);
+  }
+
+  .exp-item {
+    display: grid;
+    grid-template-columns: 24px 1fr;
+    gap: 2rem;
+    padding-bottom: 3rem;
+    position: relative;
+  }
+
+  .exp-dot {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid var(--accent);
+    background: var(--navy);
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+    margin-top: 0.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .exp-dot::after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  .exp-card {
+    background: var(--navy-light);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    padding: 2rem;
+    transition: all 0.3s;
+  }
+
+  .exp-card:hover {
+    border-color: var(--border);
+    transform: translateX(4px);
+  }
+
+  .exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .exp-company {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--white);
+  }
+
+  .exp-period {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    padding: 0.3rem 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+
+  .exp-role {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 1.25rem;
+  }
+
+  .exp-highlights {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .exp-highlights li {
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: var(--text-dim);
+    padding-left: 1.25rem;
+    position: relative;
+    line-height: 1.6;
+  }
+
+  .exp-highlights li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 0.8rem;
+  }
+
+  /* ── SKILLS ── */
+  .skills-section { background: var(--navy-mid); }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 3rem auto 0;
+  }
+
+  .skill-cluster {
+    background: var(--navy-light);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    padding: 1.75rem;
+    transition: all 0.3s;
+  }
+
+  .skill-cluster:hover {
+    border-color: var(--border);
+    background: rgba(26, 37, 64, 0.8);
+  }
+
+  .skill-cluster-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .skill-cluster-title svg {
+    width: 16px;
+    height: 16px;
+    fill: var(--accent);
+    flex-shrink: 0;
+  }
+
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .skill-tag {
+    font-size: 0.78rem;
+    font-weight: 300;
+    color: var(--text-dim);
+    padding: 0.3rem 0.7rem;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border-subtle);
+    border-radius: 4px;
+    transition: all 0.2s;
+  }
+
+  .skill-tag:hover {
+    color: var(--accent);
+    border-color: var(--border);
+    background: var(--accent-glow);
+  }
+
+  /* ── CERTS ── */
+  .certs-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+    max-width: 1100px;
+    margin: 3rem auto 0;
+  }
+
+  .cert-card {
+    background: var(--navy-light);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    padding: 1.65rem;
+    transition: all 0.3s;
+    cursor: default;
+    min-height: 205px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .cert-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(201,169,110,0.12);
+  }
+
+  .cert-icon {
+    width: 100%;
+    min-height: 90px;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.96);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+    padding: 0.8rem;
+    overflow: hidden;
+  }
+
+  .cert-icon img {
+    display: block;
+    max-width: 120px;
+    max-height: 80px;
+    object-fit: contain;
+  }
+
+  .cert-icon span {
+    color: var(--navy);
+    display: none;
+    font-weight: 600;
+  }
+
+  .cert-name {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 0.3rem;
+    line-height: 1.3;
+  }
+
+  .cert-body {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+  }
+
+  /* ── GLOBAL FOOTPRINT ── */
+  .footprint {
+    background: var(--navy-mid);
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .regions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    max-width: 900px;
+    margin: 2rem auto 0;
+    justify-content: center;
+  }
+
+  .region-chip {
+    padding: 0.6rem 1.25rem;
+    border: 1px solid var(--border);
+    border-radius: 30px;
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    background: var(--accent-glow);
+    transition: all 0.2s;
+  }
+
+  .region-chip:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+
+  /* ── CONTACT ── */
+  .contact { text-align: center; }
+
+  .contact-inner {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .contact-link {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 1rem 1.75rem;
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    color: var(--text-dim);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: all 0.3s;
+  }
+
+  .contact-link:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: var(--accent-glow);
+    transform: translateY(-2px);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--navy);
+    border-top: 1px solid var(--border-subtle);
+    padding: 2rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    color: var(--accent);
+    font-weight: 300;
+  }
+
+  .footer-note {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; padding: 6rem 1.5rem 3rem; }
+    .hero-photo-wrap { order: -1; }
+    .hero-photo { max-width: 280px; }
+    .photo-stats { bottom: -3.5rem; left: 50%; transform: translateX(-50%); }
+    .metrics { grid-template-columns: repeat(2, 1fr); padding: 2rem 1.5rem; }
+    .skills-grid { grid-template-columns: 1fr; }
+    .certs-grid { grid-template-columns: repeat(2, 1fr); }
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { gap: 1.5rem; }
+    section { padding: 4rem 1.5rem; }
+    footer { flex-direction: column; gap: 1rem; text-align: center; }
+  }
+
+  @media (max-width: 560px) {
+    .nav-links { display: none; }
+    .hero-actions,
+    .contact-links { flex-direction: column; align-items: stretch; }
+    .btn-primary,
+    .btn-outline,
+    .contact-link { width: 100%; }
+    .certs-grid,
+    .metrics { grid-template-columns: 1fr; }
+    .photo-stats { gap: 1rem; padding: 0.85rem 1rem; }
+    .stat-num { font-size: 1.65rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">RKG</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#certifications">Certs</a></li>
+    <li><a href="rohit-kumar-goel-resume.html" download>Resume</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="about">
+  <div class="hero-content">
+    <div class="hero-badge">Cybersecurity · Cloud · AI · 21+ Years</div>
+    <h1 class="hero-name">Rohit <em>Kumar</em><br>Goel</h1>
+    <p class="hero-title">Head of Technical Operations · AI Generalist · Cybersecurity Leader</p>
+    <p class="hero-summary">Technology executive with 21+ years of leadership across FinTech, consulting, and enterprise IT — including a decade at Microsoft. Deep expertise in Azure cloud architecture, cybersecurity governance (ISO 27001:2022, PCI-DSS), and DevSecOps engineering. Practitioner of Generative and Agentic AI — building intelligent automations with Claude, ChatGPT, and Gemini across MCP-powered workflows and enterprise connectors.</p>
+    <div class="hero-certs">
+      <span class="cert-badge">CISSP</span>
+      <span class="cert-badge">CISM</span>
+      <span class="cert-badge">CCSP</span>
+      <span class="cert-badge">CCSK</span>
+      <span class="cert-badge">MS Cybersecurity Architect Expert</span>
+      <span class="cert-badge">AI Generalist</span>
+    </div>
+    <div class="hero-actions">
+      <a href="mailto:rohitgoel2019@outlook.com" class="btn-primary">Get in Touch</a>
+      <a href="rohit-kumar-goel-resume.html" class="btn-outline" download>Download Resume</a>
+      <a href="https://linkedin.com/in/rohitkrgoel" target="_blank" class="btn-outline" rel="noreferrer">LinkedIn ↗</a>
+      <a href="https://www.credly.com/users/rohit-goel.68bb77d5" target="_blank" class="btn-outline" rel="noreferrer">Credly ↗</a>
+    </div>
+  </div>
+  <div class="hero-photo-wrap">
+    <img class="hero-photo" src="RohitG.jpeg" alt="Rohit Kumar Goel">
+    <div class="photo-stats">
+      <div class="stat">
+        <span class="stat-num">21+</span>
+        <span class="stat-label">Years Exp.</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">10</span>
+        <span class="stat-label">At Microsoft</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">50+</span>
+        <span class="stat-label">Engagements</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METRICS -->
+<div class="metrics">
+  <div class="metric-item reveal">
+    <span class="metric-num">90<span class="metric-unit">%</span></span>
+    <div class="metric-desc">Reduction in security incidents via ISO 27001:2022 transformation</div>
+  </div>
+  <div class="metric-item reveal">
+    <span class="metric-num">65<span class="metric-unit">%</span></span>
+    <div class="metric-desc">Faster VM provisioning with automated DevSecOps pipeline</div>
+  </div>
+  <div class="metric-item reveal">
+    <span class="metric-num">75<span class="metric-unit">%</span></span>
+    <div class="metric-desc">Reduction in annual licensing spend (~$8.6K saved)</div>
+  </div>
+  <div class="metric-item reveal">
+    <span class="metric-num">360<span class="metric-unit">+</span></span>
+    <div class="metric-desc">Manual work hours saved annually via Power Automate</div>
+  </div>
+</div>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="experience-wrap">
+    <div class="section-label">Career Journey</div>
+    <h2 class="section-title">Professional <em>Experience</em></h2>
+
+    <div class="exp-grid">
+
+      <div class="exp-item reveal">
+        <div class="exp-dot"></div>
+        <div class="exp-card">
+          <div class="exp-header">
+            <div class="exp-company">FinMkt Inc.</div>
+            <span class="exp-period">Jan 2024 – Present</span>
+          </div>
+          <div class="exp-role">Head of Technical Operations · Hyderabad, India</div>
+          <ul class="exp-highlights">
+            <li>Spearheaded enterprise-wide IT strategy and multi-year technology roadmap aligned with ISO 27001:2022 and PCI-DSS mandates, aligning infrastructure investments with organizational growth</li>
+            <li>Architected and scaled a hybrid Azure cloud environment (IaaS/VNet/Entra ID), managing end-to-end infrastructure operations across Windows and macOS device fleets via Microsoft Intune — achieving <strong>99.9%+ platform uptime</strong></li>
+            <li>Built and operationalized a full-stack DevSecOps toolchain: Foreman (with Azure RM plugin), Puppet, Ansible AWX, Jenkins, Bicep/ARM — standardizing hardened golden image pipelines for Ubuntu and RHEL, <strong>reducing VM provisioning cycle time by 65%</strong></li>
+            <li>Designed and implemented a Linux Custom Image Lifecycle Management program using Azure DevOps CI/CD pipelines — automating build, security hardening, CIS benchmark compliance, ClamAV scanning, Wazuh agent integration, and publishing to Azure Compute Gallery; <strong>reduced image release cycle from days to under two hours</strong></li>
+            <li>Championed a Security Transformation program aligned to ISO 27001:2022, achieving a <strong>90% reduction in security incidents</strong> and delivering a fully audit-ready environment within 12 months</li>
+            <li>Deployed an AI-driven IT Command Centre integrating Microsoft Graph API, Defender for Endpoint, and Wazuh SIEM for proactive incident management and real-time infrastructure visibility</li>
+            <li>Consolidated enterprise tool ecosystem from three overlapping platforms into a unified solution — <strong>cutting annual licensing by 75% (~$8.6K saved)</strong> while improving user experience</li>
+            <li>Automated employee access workflows using Power Automate — <strong>reducing provisioning time by 90%, saving 360+ manual work hours annually</strong></li>
+            <li>Launched Jira Service Management to replace email-based IT support — <strong>raising operational efficiency by 65%</strong> through structured ticket handling and SLA adherence</li>
+            <li>Achieved a <strong>95% employee engagement rate</strong> in Cybersecurity Awareness initiatives, measurably reducing phishing susceptibility</li>
+            <li><strong>Awarded company equity within nine months</strong> of hire in recognition of exceptional leadership in IT transformation and cybersecurity program maturity</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item reveal">
+        <div class="exp-dot"></div>
+        <div class="exp-card">
+          <div class="exp-header">
+            <div class="exp-company">Microland Limited</div>
+            <span class="exp-period">May 2018 – Dec 2023</span>
+          </div>
+          <div class="exp-role">Client Solutions Director · Bengaluru, India</div>
+          <ul class="exp-highlights">
+            <li>Directed client solution architecture across Cybersecurity (SIEM, EDR, IAM), Hybrid Cloud & Data Centre (Azure, VMware), and Modern Workplace (M365, Intune, Autopilot) for enterprise accounts across Europe, MEA, and Asia-Pacific</li>
+            <li>Owned end-to-end bid management and proposal delivery — leading RFP responses, commercial negotiations, and solution defense sessions — with a <strong>consistent above-average win rate on multi-million dollar TCV competitive pursuits</strong></li>
+            <li>Designed transformation roadmaps for <strong>10+ enterprise clients</strong> covering Day 0 (Assessment & Architecture), Day 1 (Implementation), and Day 2 (Managed Operations) lifecycle across Fixed Price, Dedicated, Hybrid, and Shared Services models</li>
+            <li>Spearheaded development of proprietary accelerators and solution offerings in Cloud Security and Digital Workplace, <strong>shortening time-to-proposal</strong> and contributing to go-to-market differentiation</li>
+            <li>Delivered complex engagements spanning Infrastructure Transformation, Hybrid Cloud migration, SIEM/Endpoint/IAM implementation, and SOC operations — consistently on scope, budget, and timeline</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item reveal">
+        <div class="exp-dot"></div>
+        <div class="exp-card">
+          <div class="exp-header">
+            <div class="exp-company">Microsoft</div>
+            <span class="exp-period">Jun 2010 – May 2018</span>
+          </div>
+          <div class="exp-role">Consultant — Cloud & Enterprise Platforms · Hyderabad, India</div>
+          <ul class="exp-highlights">
+            <li>Served as PEAT (Partner Engineering Alignment Team) Architect and Pre-Sales Solution Architect for Microsoft's enterprise and partner ecosystem — spanning <strong>50+ engagements</strong> across Azure Cloud, Security, Modern Workplace, and Virtualization</li>
+            <li>Led Azure cloud migrations (lift-and-shift, hybrid, cloud-native) for enterprise clients across USA, France, Germany, Netherlands, UAE, Qatar, Saudi Arabia, Singapore, and Australia</li>
+            <li>Architected and delivered solutions across Azure IaaS, Microsoft Security (DLP, CASB, AIP, Conditional Access, PIM, MFA, BitLocker), Hyper-V, SQL clustering, SCCM, Intune/MDM, O365, VDI, and WaaS</li>
+            <li><strong>Speaker at Microsoft TechEd India 2014</strong> (Bengaluru) on 'Best Practices — SCCM 2012 R2'; delivered Microsoft TechReady sessions on Enterprise Mobility + Security (EMS)</li>
+            <li>Reviewed architecture design documents from Microsoft Gold Partners as part of the PEAT program, maintaining technical quality standards across the partner ecosystem</li>
+            <li>Published on Microsoft Docs Technical Blog (azure.microsoft.com/archive/blogs/rogoel) and produced Azure solution walkthroughs on YouTube</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item reveal">
+        <div class="exp-dot"></div>
+        <div class="exp-card">
+          <div class="exp-header">
+            <div class="exp-company">Hewlett-Packard India</div>
+            <span class="exp-period">Oct 2008 – May 2010</span>
+          </div>
+          <div class="exp-role">Technology Consultant · Bengaluru, India</div>
+          <ul class="exp-highlights">
+            <li>Designed and implemented Microsoft technology solutions for enterprise clients across Security, VMware Virtualization, and DC transformation</li>
+            <li>Delivered full project lifecycle documentation (HLDs, LLDs, SOWs, WBS) and PoCs for enterprise clients</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item reveal">
+        <div class="exp-dot"></div>
+        <div class="exp-card">
+          <div class="exp-header">
+            <div class="exp-company">Microsoft</div>
+            <span class="exp-period">Feb 2005 – Sep 2008</span>
+          </div>
+          <div class="exp-role">Partner Technical Consultant · Bengaluru, India</div>
+          <ul class="exp-highlights">
+            <li>Managed 20+ Microsoft Gold Partner accounts as Technical Account Manager, providing advisory services and strategic planning</li>
+            <li>Acted as Trusted Advisor on SCCM and Microsoft Security Solutions, reviewing architecture documents and resolving partner escalations</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="skills-section" id="skills">
+  <div class="section-label">Expertise</div>
+  <h2 class="section-title">Core <em>Competencies</em></h2>
+
+  <div class="skills-grid">
+    <div class="skill-cluster reveal">
+      <div class="skill-cluster-title">
+        <svg viewBox="0 0 24 24"><path d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
+        Cloud & Infrastructure
+      </div>
+      <div class="skill-tags">
+        <span class="skill-tag">Azure IaaS/PaaS</span>
+        <span class="skill-tag">VNet Architecture</span>
+        <span class="skill-tag">Azure Image Builder</span>
+        <span class="skill-tag">Compute Gallery</span>
+        <span class="skill-tag">Entra ID</span>
+        <span class="skill-tag">Intune</span>
+        <span class="skill-tag">Autopilot</span>
+        <span class="skill-tag">M365</span>
+      </div>
+    </div>
+
+    <div class="skill-cluster reveal">
+      <div class="skill-cluster-title">
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Cybersecurity & Compliance
+      </div>
+      <div class="skill-tags">
+        <span class="skill-tag">ISO 27001:2022</span>
+        <span class="skill-tag">PCI-DSS</span>
+        <span class="skill-tag">Wazuh SIEM</span>
+        <span class="skill-tag">Defender XDR</span>
+        <span class="skill-tag">PIM / MFA</span>
+        <span class="skill-tag">Zero Trust</span>
+        <span class="skill-tag">CIS Benchmark</span>
+        <span class="skill-tag">CASB</span>
+      </div>
+    </div>
+
+    <div class="skill-cluster reveal">
+      <div class="skill-cluster-title">
+        <svg viewBox="0 0 24 24"><path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+        DevSecOps & Automation
+      </div>
+      <div class="skill-tags">
+        <span class="skill-tag">Bicep / ARM</span>
+        <span class="skill-tag">Terraform</span>
+        <span class="skill-tag">Foreman</span>
+        <span class="skill-tag">Puppet</span>
+        <span class="skill-tag">Ansible AWX</span>
+        <span class="skill-tag">Jenkins</span>
+        <span class="skill-tag">Azure DevOps</span>
+        <span class="skill-tag">Power Automate</span>
+      </div>
+    </div>
+
+    <div class="skill-cluster reveal">
+      <div class="skill-cluster-title">
+        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        Leadership & Strategy
+      </div>
+      <div class="skill-tags">
+        <span class="skill-tag">IT Roadmap Development</span>
+        <span class="skill-tag">Team Building</span>
+        <span class="skill-tag">ITSM / ITIL</span>
+        <span class="skill-tag">Vendor Management</span>
+        <span class="skill-tag">Pre-Sales / RFP</span>
+        <span class="skill-tag">Budget Optimization</span>
+        <span class="skill-tag">Exec Stakeholder Mgmt</span>
+      </div>
+    </div>
+
+    <div class="skill-cluster reveal">
+      <div class="skill-cluster-title">
+        <svg viewBox="0 0 24 24"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
+        Linux & OS Management
+      </div>
+      <div class="skill-tags">
+        <span class="skill-tag">Ubuntu</span>
+        <span class="skill-tag">RHEL</span>
+        <span class="skill-tag">ClamAV</span>
+        <span class="skill-tag">Auditd</span>
+        <span class="skill-tag">Fail2Ban</span>
+        <span class="skill-tag">Wazuh Agent</span>
+        <span class="skill-tag">Azure Monitor Agent</span>
+        <span class="skill-tag">Lynis</span>
+      </div>
+    </div>
+
+    <div class="skill-cluster reveal">
+      <div class="skill-cluster-title">
+        <svg viewBox="0 0 24 24"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+        Generative & Agentic AI
+      </div>
+      <div class="skill-tags">
+        <span class="skill-tag">Claude (Anthropic)</span>
+        <span class="skill-tag">ChatGPT / OpenAI</span>
+        <span class="skill-tag">Google Gemini</span>
+        <span class="skill-tag">Generative AI</span>
+        <span class="skill-tag">Agentic AI</span>
+        <span class="skill-tag">MCP (Model Context Protocol)</span>
+        <span class="skill-tag">AI Connectors</span>
+        <span class="skill-tag">Complex Workflow Automation</span>
+        <span class="skill-tag">Prompt Engineering</span>
+        <span class="skill-tag">AI-Driven Operations</span>
+      </div>
+    </div>
+
+    <div class="skill-cluster reveal">
+      <div class="skill-cluster-title">
+        <svg viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+        Education Platform
+      </div>
+      <div class="skill-tags">
+        <span class="skill-tag">InfoKavach Academy</span>
+        <span class="skill-tag">CISSP / CISM Prep</span>
+        <span class="skill-tag">YouTube Content</span>
+        <span class="skill-tag">LinkedIn Thought Leadership</span>
+        <span class="skill-tag">Cybersecurity Awareness</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="section-label">Credentials</div>
+  <h2 class="section-title">Certifications & <em>Qualifications</em></h2>
+
+  <div class="certs-grid">
+    <div class="cert-card reveal">
+      <div class="cert-icon"><img src="cissp.png" alt="CISSP certification badge" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block';"><span>ISC2</span></div>
+      <div class="cert-name">Certified Information Systems Security Professional</div>
+      <div class="cert-body">CISSP · 2021</div>
+    </div>
+    <div class="cert-card reveal">
+      <div class="cert-icon"><img src="certified-information-security-manager-cism.png" alt="CISM certification badge" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block';"><span>ISACA</span></div>
+      <div class="cert-name">Certified Information Security Manager</div>
+      <div class="cert-body">CISM · 2025</div>
+    </div>
+    <div class="cert-card reveal">
+      <div class="cert-icon"><img src="ccsp.png" alt="CCSP certification badge" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block';"><span>ISC2</span></div>
+      <div class="cert-name">Certified Cloud Security Professional</div>
+      <div class="cert-body">CCSP · 2021</div>
+    </div>
+    <div class="cert-card reveal">
+      <div class="cert-icon"><img src="ccsk.png" alt="CCSK certification badge" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block';"><span>CSA</span></div>
+      <div class="cert-name">Certificate of Cloud Security Knowledge</div>
+      <div class="cert-body">CCSK · 2023</div>
+    </div>
+    <div class="cert-card reveal">
+      <div class="cert-icon"><img src="mcp.png" alt="Microsoft SC-100 Cybersecurity Architect Expert badge" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block';"><span>Microsoft</span></div>
+      <div class="cert-name">Cybersecurity Architect Expert</div>
+      <div class="cert-body">SC-100 · Microsoft · 2022</div>
+    </div>
+    <div class="cert-card reveal">
+      <div class="cert-icon"><img src="https://images.credly.com/size/340x340/images/987adb7e-49be-4e24-b67e-55986bd3fe66/image.png" alt="MCSE badge" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block';"><span>Microsoft</span></div>
+      <div class="cert-name">Solutions Expert: Cloud Platform & Infrastructure</div>
+      <div class="cert-body">MCSE · 2017</div>
+    </div>
+    <div class="cert-card reveal">
+      <div class="cert-icon"><img src="Google.png" alt="Google Cloud Cybersecurity Certificate badge" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block';"><span>Google Cloud</span></div>
+      <div class="cert-name">Cloud Cybersecurity Certificate</div>
+      <div class="cert-body">Google Cloud · 2023</div>
+    </div>
+    <div class="cert-card reveal">
+      <div class="cert-icon"><img src="https://logo.clearbit.com/iimcal.ac.in" alt="IIM Calcutta logo" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block';"><span>IIM Calcutta</span></div>
+      <div class="cert-name">Executive Program in Business Management</div>
+      <div class="cert-body">IIM Kolkata · 2017</div>
+    </div>
+  </div>
+</section>
+
+<!-- GLOBAL FOOTPRINT -->
+<section class="footprint">
+  <div class="section-label">Global Reach</div>
+  <h2 class="section-title" style="text-align:center;">Delivered Across <em>4 Continents</em></h2>
+  <div class="regions">
+    <span class="region-chip">🇺🇸 United States</span>
+    <span class="region-chip">🇫🇷 France</span>
+    <span class="region-chip">🇩🇪 Germany</span>
+    <span class="region-chip">🇳🇱 Netherlands</span>
+    <span class="region-chip">🇬🇧 United Kingdom</span>
+    <span class="region-chip">🇦🇪 UAE</span>
+    <span class="region-chip">🇶🇦 Qatar</span>
+    <span class="region-chip">🇸🇦 Saudi Arabia</span>
+    <span class="region-chip">🇸🇬 Singapore</span>
+    <span class="region-chip">🇦🇺 Australia</span>
+    <span class="region-chip">🇹🇭 Thailand</span>
+    <span class="region-chip">🇻🇳 Vietnam</span>
+    <span class="region-chip">🇮🇩 Indonesia</span>
+    <span class="region-chip">🇮🇳 India</span>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <div class="contact-inner">
+    <div class="section-label" style="justify-content:center;">Let's Connect</div>
+    <h2 class="section-title">Get in <em>Touch</em></h2>
+    <p style="color:var(--text-dim); font-weight:300; margin-top:1rem;">Based in Hyderabad, India. Available for consulting, speaking engagements, and collaboration on enterprise AI, cybersecurity, and cloud transformation initiatives. Holds a valid US Business Visa.</p>
+    <div class="contact-links">
+      <a href="mailto:rohitgoel2019@outlook.com" class="contact-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        rohitgoel2019@outlook.com
+      </a>
+      <a href="tel:+918142777043" class="contact-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+        +91 814 277 7043
+      </a>
+      <a href="https://linkedin.com/in/rohitkrgoel" target="_blank" class="contact-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        linkedin.com/in/rohitkrgoel
+      </a>
+      <a href="https://www.credly.com/users/rohit-goel.68bb77d5" target="_blank" class="contact-link" rel="noreferrer">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+        credly.com/rohit-goel
+      </a>
+      <a href="rohit-kumar-goel-resume.html" class="contact-link" download>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2"/></svg>
+        Download Resume
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-name">Rohit Kumar Goel</div>
+  <div class="footer-note">CISSP · CISM · CCSP · Hyderabad, India · 2025</div>
+</footer>
+
+<script>
+// Intersection Observer for reveal animations
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => {
+        entry.target.classList.add('visible');
+      }, 80 * (entry.target.dataset.delay || 0));
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.reveal').forEach((el, i) => {
+  el.dataset.delay = i % 4;
+  revealObserver.observe(el);
+});
+
+// Active nav link on scroll
+const sections = document.querySelectorAll('section[id], div.metrics');
+const navLinks = document.querySelectorAll('.nav-links a');
+
+const navObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      navLinks.forEach(link => {
+        link.style.color = '';
+        if (link.getAttribute('href') === '#' + entry.target.id) {
+          link.style.color = 'var(--accent)';
+        }
+      });
+    }
+  });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('section[id]').forEach(section => navObserver.observe(section));
+</script>
+
+</body>
+</html>

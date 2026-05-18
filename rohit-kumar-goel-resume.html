@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rohit Kumar Goel - Resume</title>
+<style>
+  :root {
+    --ink: #162033;
+    --muted: #5d677b;
+    --line: #d9deea;
+    --accent: #9a6b24;
+    --paper: #ffffff;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: #eef1f6;
+    color: var(--ink);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+  }
+
+  .page {
+    width: min(900px, calc(100% - 32px));
+    margin: 32px auto;
+    background: var(--paper);
+    padding: 48px;
+    box-shadow: 0 20px 60px rgba(22,32,51,0.12);
+  }
+
+  header {
+    border-bottom: 2px solid var(--line);
+    padding-bottom: 22px;
+    margin-bottom: 28px;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 34px;
+    letter-spacing: 0.01em;
+  }
+
+  .headline {
+    margin-top: 6px;
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  .contact {
+    margin-top: 14px;
+    color: var(--muted);
+    font-size: 14px;
+  }
+
+  h2 {
+    margin: 28px 0 10px;
+    font-size: 14px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 7px;
+  }
+
+  h3 {
+    margin: 18px 0 2px;
+    font-size: 17px;
+  }
+
+  .meta {
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  p { margin: 0 0 10px; }
+
+  ul {
+    margin: 8px 0 0 20px;
+    padding: 0;
+  }
+
+  li { margin-bottom: 7px; }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px 32px;
+  }
+
+  .pill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+  }
+
+  .pill {
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 5px 10px;
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  .print-actions {
+    width: min(900px, calc(100% - 32px));
+    margin: 24px auto 0;
+    text-align: right;
+  }
+
+  .print-actions button {
+    background: var(--ink);
+    color: white;
+    border: 0;
+    border-radius: 4px;
+    padding: 11px 16px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  @media print {
+    body { background: white; }
+    .page {
+      width: 100%;
+      margin: 0;
+      padding: 28px;
+      box-shadow: none;
+    }
+    .print-actions { display: none; }
+  }
+
+  @media (max-width: 700px) {
+    .page { padding: 28px; }
+    .grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+  <div class="print-actions">
+    <button type="button" onclick="window.print()">Print / Save as PDF</button>
+  </div>
+
+  <main class="page">
+    <header>
+      <h1>Rohit Kumar Goel</h1>
+      <div class="headline">Head of Technical Operations | IT Strategy & Transformation | Cybersecurity</div>
+      <div class="contact">Hyderabad, India | +91 814 277 7043 | rohitgoel2019@outlook.com | linkedin.com/in/rohitkrgoel</div>
+    </header>
+
+    <section>
+      <h2>Executive Summary</h2>
+      <p>Technology executive with 21+ years of leadership across FinTech, consulting, enterprise IT, cloud transformation, and cybersecurity, including a decade at Microsoft. Known for building audit-ready technical operations, secure hybrid cloud platforms, DevSecOps automation, and high-performing global solution teams.</p>
+    </section>
+
+    <section>
+      <h2>Selected Impact</h2>
+      <ul>
+        <li>Reduced security incidents by 90% through ISO 27001:2022-led security transformation.</li>
+        <li>Reduced VM provisioning cycle time by 65% using Foreman, Puppet, Ansible AWX, Jenkins, and Azure automation.</li>
+        <li>Saved 360+ manual work hours annually through Power Automate workflows.</li>
+        <li>Delivered 50+ Microsoft-era cloud, security, virtualization, and modern workplace engagements across multiple continents.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Experience</h2>
+
+      <h3>FinMkt Inc.</h3>
+      <div class="meta">Head of Technical Operations | Hyderabad, India | Jan 2024 - Present</div>
+      <ul>
+        <li>Own enterprise IT strategy and multi-year technology roadmap aligned with ISO 27001:2022 and PCI-DSS requirements.</li>
+        <li>Architect hybrid Azure cloud services, Entra ID, Intune, Autopilot, and secure Windows/macOS endpoint operations.</li>
+        <li>Built AI-driven IT Command Centre using Microsoft Graph API, Defender for Endpoint, and Wazuh SIEM.</li>
+        <li>Awarded company equity within nine months for exceptional leadership in IT transformation.</li>
+      </ul>
+
+      <h3>Microland Limited</h3>
+      <div class="meta">Client Solutions Director | Bengaluru, India | May 2018 - Dec 2023</div>
+      <ul>
+        <li>Directed solution architecture across cybersecurity, hybrid cloud, and modern workplace portfolios for enterprise clients.</li>
+        <li>Owned end-to-end bid management for multi-million dollar competitive pursuits across Europe, MEA, and Asia-Pacific.</li>
+        <li>Designed Day 0/1/2 transformation roadmaps across fixed price, dedicated, hybrid, and shared services models.</li>
+      </ul>
+
+      <h3>Microsoft</h3>
+      <div class="meta">Consultant - Cloud & Enterprise Platforms | Hyderabad, India | Jun 2010 - May 2018</div>
+      <ul>
+        <li>Served as PEAT Architect and Pre-Sales Solution Architect across Azure Cloud, Security, Modern Workplace, and Virtualization.</li>
+        <li>Led Azure cloud migrations for enterprise clients in the USA, Europe, Middle East, Singapore, Australia, and India.</li>
+        <li>Presented at Microsoft TechEd India 2014 and delivered TechReady sessions on Enterprise Mobility + Security.</li>
+      </ul>
+
+      <h3>Hewlett-Packard India</h3>
+      <div class="meta">Technology Consultant | Bengaluru, India | Oct 2008 - May 2010</div>
+      <ul>
+        <li>Designed Microsoft technology solutions across security, VMware virtualization, and data center transformation.</li>
+      </ul>
+
+      <h3>Microsoft</h3>
+      <div class="meta">Partner Technical Consultant | Bengaluru, India | Feb 2005 - Sep 2008</div>
+      <ul>
+        <li>Managed 20+ Microsoft Gold Partner accounts as Technical Account Manager and trusted advisor.</li>
+      </ul>
+    </section>
+
+    <section class="grid">
+      <div>
+        <h2>Core Skills</h2>
+        <div class="pill-list">
+          <span class="pill">Azure IaaS/PaaS</span>
+          <span class="pill">Entra ID</span>
+          <span class="pill">Intune</span>
+          <span class="pill">Defender XDR</span>
+          <span class="pill">Wazuh SIEM</span>
+          <span class="pill">ISO 27001:2022</span>
+          <span class="pill">PCI-DSS</span>
+          <span class="pill">DevSecOps</span>
+          <span class="pill">Ansible AWX</span>
+          <span class="pill">Jenkins</span>
+          <span class="pill">Power Automate</span>
+          <span class="pill">IT Roadmaps</span>
+        </div>
+      </div>
+
+      <div>
+        <h2>Certifications</h2>
+        <ul>
+          <li>CISSP - ISC2, 2021</li>
+          <li>CISM - ISACA, 2025</li>
+          <li>CCSP - ISC2, 2021</li>
+          <li>CCSK - Cloud Security Alliance, 2023</li>
+          <li>Microsoft Cybersecurity Architect Expert, 2022</li>
+          <li>Google Cloud Digital Leader, 2023</li>
+          <li>Executive Program in Business Management - IIM Kolkata, 2017</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
