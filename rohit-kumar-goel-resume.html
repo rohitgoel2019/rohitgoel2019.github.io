@@ -84,6 +84,8 @@
   .list-tight { list-style: none; margin: 0; }
   .list-tight li { padding: .3rem 0; margin: 0; border-bottom: 1px solid var(--rule); }
   .list-tight li strong { display: block; font-weight: 600; }
+  #h-edu + .list-tight li { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; }
+  #h-edu + .list-tight .mono { display: inline; margin: 0; }
   .list-tight .mono { display: block; margin-top: .05rem; }
 
   /* ── PRINT: A4, two pages ── */
@@ -95,8 +97,9 @@
     .sheet { width: auto; max-width: none; margin: 0; padding: 11mm 14mm 9mm; }
     h1 { font-size: 25pt; }
     h3 { font-size: 11.5pt; }
-    section { margin-top: 3.5mm; }
-    .row { padding: 2mm 0; }
+    section { margin-top: 3mm; }
+    h2 { margin-bottom: 1.8mm; }
+    .row { padding: 1.7mm 0; }
     h1 { font-size: 23pt; }
     ul, .kv, table { font-size: 8.7pt; }
     li { margin-bottom: .6mm; }
@@ -136,7 +139,7 @@
   <header class="head">
     <div>
       <h1>Rohit Kumar Goel</h1>
-      <p class="title">Head of Technical Operations · Cloud and cybersecurity</p>
+      <p class="title">Head of Technical Operations · Enterprise IT, cloud, security and automation</p>
     </div>
     <ul class="contact">
       <li>Hyderabad, India</li>
@@ -148,7 +151,19 @@
 
   <section aria-labelledby="h-profile">
     <h2 id="h-profile">Profile</h2>
-    <p>Technology leader with 21 years in FinTech, consulting and enterprise IT, ten of them at Microsoft. I combine hands-on depth in Azure, DevSecOps and security governance (ISO 27001:2022, PCI-DSS) with the leadership to run teams, budgets and audits. Recent work applies generative and agentic AI (Claude, ChatGPT, Gemini, MCP) to everyday IT operations.</p>
+    <p>Enterprise IT and technology operations leader with 21 years in FinTech, consulting and enterprise IT, ten of them at Microsoft. I run end-user computing, cloud infrastructure, security and compliance (ISO 27001:2022, PCI-DSS), DevSecOps, service management, automation and AI as one operation, including budget, vendors and people. I stay close to the engineering, so strategy and delivery match. Seeking a VP or Head of Technical Operations role at a multinational organisation.</p>
+  </section>
+
+  <section aria-labelledby="h-areas">
+    <h2 id="h-areas">Areas of responsibility</h2>
+    <dl class="kv">
+      <dt>End-user computing</dt><dd>Windows and macOS fleets on Intune, Autopilot, Microsoft 365, Entra ID; access and joiner automation</dd>
+      <dt>Cloud and infrastructure</dt><dd>Hybrid Azure (IaaS, VNet, Entra ID), Ubuntu and RHEL, Foreman lifecycle, Compute Gallery; 99.9%+ uptime</dd>
+      <dt>Security and compliance</dt><dd>ISO 27001:2022, PCI-DSS, Wazuh SIEM, Defender, PIM and MFA, CIS hardening, awareness programme</dd>
+      <dt>DevSecOps and automation</dt><dd>Puppet, Ansible AWX, Jenkins, Bicep/ARM, Azure DevOps, Power Automate, golden-image pipelines</dd>
+      <dt>AI and digitalisation</dt><dd>AI-driven IT command centre; Claude, ChatGPT, Gemini and MCP workflows; structured ITSM</dd>
+      <dt>Commercial and people</dt><dd>Vendors and SLAs, licensing and budget, RFPs, cross-functional team leadership, executive stakeholders</dd>
+    </dl>
   </section>
 
   <section aria-labelledby="h-work">
@@ -158,14 +173,15 @@
       <p class="when mono">01/2024 – present</p>
       <div>
         <h3>Head of Technical Operations</h3>
-        <p class="org">FinMkt Inc. · Hyderabad, India</p>
+        <p class="org">FinMkt Inc. · Hyderabad, India · FinTech, lending and credit SaaS platform</p>
         <ul>
-          <li>Own the multi-year technology roadmap, aligned to ISO 27001:2022 and PCI-DSS, and run a hybrid Azure estate (IaaS, VNet, Entra ID) plus Windows and macOS fleets on Intune at <strong>99.9%+ uptime</strong>.</li>
-          <li>Built a DevSecOps toolchain (Foreman, Puppet, Ansible AWX, Jenkins, Bicep/ARM) and a Linux golden-image pipeline on Azure DevOps with CIS hardening, ClamAV, Wazuh and Azure Compute Gallery. <strong>VM provisioning is 65% faster</strong> and image releases dropped <strong>from days to under two hours</strong>.</li>
-          <li>Led a security transformation to ISO 27001:2022: <strong>90% fewer incidents</strong> and an audit-ready environment within 12 months.</li>
-          <li>Deployed an AI-driven IT command centre across Microsoft Graph, Defender for Endpoint and Wazuh SIEM.</li>
-          <li>Merged three overlapping tools into one, <strong>cutting licensing by 75%</strong> (about USD 8.6K a year). Automated access provisioning with Power Automate (<strong>90% faster, 360+ hours saved a year</strong>).</li>
-          <li>Replaced email-based IT support with Jira Service Management (<strong>+65% operational efficiency</strong>). Security awareness training reached <strong>95% engagement</strong>.</li>
+          <li>Own the enterprise IT strategy and multi-year roadmap, aligned to ISO 27001:2022 and PCI-DSS. Led a security transformation: <strong>90% fewer incidents</strong> and an audit-ready environment within 12 months.</li>
+          <li>Architected a hybrid Azure estate (IaaS, VNet, Entra ID) and run Windows and macOS fleets through Intune at <strong>99.9%+ uptime</strong>. Foreman-based bare-metal and VM lifecycle, integrated with Azure Compute Gallery, enforces Puppet policy, ClamAV, Wazuh and OS hardening.</li>
+          <li>Built the DevSecOps toolchain (Foreman with Azure RM plugin, Azure Image Builder, Puppet with Bitbucket-synced modules, Ansible AWX, Jenkins, Bicep/ARM): <strong>VM provisioning about 65% faster</strong>.</li>
+          <li>Designed the Linux image lifecycle on Azure DevOps (build, CIS hardening, ClamAV, Wazuh, Azure Monitor Agent, publish to Compute Gallery): releases went <strong>from days to under two hours</strong>.</li>
+          <li>Deployed an AI-driven IT command centre across Microsoft Graph, Defender for Endpoint and Wazuh SIEM for proactive incident management.</li>
+          <li>Automated access workflows with Power Automate (<strong>90% faster, 360+ hours saved a year</strong>). Launched Jira Service Management in place of email support (<strong>+65% efficiency</strong>, better SLA adherence).</li>
+          <li>Consolidated three platforms into one, <strong>cutting licensing by 75%</strong> (about USD 8.6K a year). Security awareness reached <strong>95% engagement</strong>.</li>
           <li><strong>Awarded company equity within nine months</strong> of joining.</li>
         </ul>
       </div>
@@ -175,12 +191,12 @@
       <p class="when mono">05/2018 – 12/2023</p>
       <div>
         <h3>Client Solutions Director</h3>
-        <p class="org">Microland Limited · Bengaluru, India</p>
+        <p class="org">Microland Limited · Bengaluru, India · IT managed services, global clients</p>
         <ul>
-          <li>Led solution architecture for enterprise accounts in Europe, the Middle East and Africa, and Asia-Pacific across security (SIEM, EDR, IAM), hybrid cloud and data centre, and the modern workplace.</li>
-          <li>Owned bids end to end (RFP responses, commercials, solution defence) with a <strong>consistently above-average win rate</strong> on multi-million dollar pursuits.</li>
-          <li>Designed Day 0 to Day 2 transformation roadmaps for <strong>10+ enterprise clients</strong> and built reusable accelerators in cloud security and digital workplace.</li>
-          <li>Led cross-functional teams of architects, delivery leads and commercial managers across locations.</li>
+          <li>Directed solution architecture across cybersecurity (SIEM, EDR, IAM), hybrid cloud and data centre (Azure, VMware) and the modern workplace (M365, Intune, Autopilot) for enterprise accounts in Europe, MEA and Asia-Pacific.</li>
+          <li>Owned bids end to end (RFPs, commercial negotiation, solution defence) with a <strong>consistently above-average win rate</strong> on multi-million dollar TCV pursuits.</li>
+          <li>Designed Day 0 to Day 2 roadmaps for <strong>10+ enterprise clients</strong> across fixed price, dedicated, hybrid and shared-services models. Built accelerators in cloud security and digital workplace.</li>
+          <li>Delivered transformation, hybrid cloud migration, SIEM, endpoint and IAM implementation and SOC operations on scope, budget and timeline. Led cross-functional teams of architects, delivery leads and commercial managers.</li>
         </ul>
       </div>
     </article>
@@ -189,13 +205,11 @@
       <p class="when mono">06/2010 – 05/2018</p>
       <div>
         <h3>Consultant, Cloud and Enterprise Platforms</h3>
-        <p class="org">Microsoft · Hyderabad, India</p>
+        <p class="org">Microsoft · Hyderabad, India · USA, Europe, MEA and Asia-Pacific delivery</p>
         <ul>
-          <li>PEAT Architect and pre-sales architect on <strong>50+ engagements</strong> in Azure, security, modern workplace and virtualisation.</li>
-          <li>Led Azure migrations (lift-and-shift, hybrid, cloud-native) for clients in the USA, France, Germany, the Netherlands, the UAE, Qatar, Saudi Arabia, Singapore and Australia.</li>
-          <li>Designed solutions across Azure IaaS, Microsoft security (DLP, CASB, AIP, Conditional Access, PIM, MFA, BitLocker), Hyper-V, SQL clustering, SCCM, Intune, Office 365 and VDI.</li>
-          <li>Reviewed Gold Partner architecture designs for the PEAT programme.</li>
-        </ul>
+          <li>PEAT Architect and pre-sales architect on <strong>50+ engagements</strong> in Azure, security, modern workplace and virtualisation. Led Azure migrations for clients in the USA, France, Germany, the Netherlands, the UAE, Qatar, Saudi Arabia, Singapore and Australia.</li>
+          <li>Delivered Azure IaaS, Gold Partner design reviews, Microsoft security (DLP, CASB, AIP, Conditional Access, PIM, MFA, BitLocker), Hyper-V, SQL clustering, SCCM, Intune, Office 365, VDI and Windows-as-a-Service, with HLDs, LLDs, SOWs, BOMs, WBS and SOPs.</li>
+                  </ul>
       </div>
     </article>
 
@@ -205,7 +219,7 @@
         <h3>Technology Consultant</h3>
         <p class="org">Hewlett-Packard India · Bengaluru, India</p>
         <ul>
-          <li>Delivered Microsoft security, VMware virtualisation and data centre transformation projects, with full HLD, LLD, SOW and proof-of-concept documentation.</li>
+          <li>Designed Microsoft security, VMware virtualisation, data centre consolidation and V2V/P2V migration solutions, with full documentation and proofs of concept.</li>
         </ul>
       </div>
     </article>
@@ -216,7 +230,7 @@
         <h3>Partner Technical Consultant</h3>
         <p class="org">Microsoft · Bengaluru, India</p>
         <ul>
-          <li>Technical account manager for 20+ Microsoft Gold Partners; trusted advisor on SCCM and Microsoft security solutions.</li>
+          <li>Technical account manager for 20+ Gold Partners, handling advisory, escalations and account planning; trusted advisor on SCCM and Microsoft security.</li>
         </ul>
       </div>
     </article>
@@ -227,7 +241,7 @@
         <h3>Chief Project Engineer</h3>
         <p class="org">Comcon Industries · New Delhi, India</p>
         <ul>
-          <li>Delivered Indian Government broadcast projects, including FM studios, newsroom digitisation and automation of the Gyan Darshan education channel.</li>
+          <li>Delivered Indian Government broadcast infrastructure: FM studios, newsroom digitisation and automation of the Gyan Darshan education channel, with HA databases, network security and AV.</li>
         </ul>
       </div>
     </article>
@@ -235,18 +249,11 @@
 
   <section aria-labelledby="h-edu">
     <h2 id="h-edu">Education and training</h2>
-    <article class="row">
-      <p class="when mono">2017</p>
-      <div><h3>Executive Programme in Business Management</h3><p class="org">Indian Institute of Management Calcutta · Corporate strategy</p></div>
-    </article>
-    <article class="row">
-      <p class="when mono">2007</p>
-      <div><h3>Master of Computer Applications (MCA)</h3><p class="org">Maharshi Dayanand University, Rohtak, India</p></div>
-    </article>
-    <article class="row">
-      <p class="when mono">2000</p>
-      <div><h3>Bachelor of Commerce</h3><p class="org">University of Delhi, India · Accounting and business management</p></div>
-    </article>
+    <ul class="list-tight">
+      <li><strong>Executive Programme in Business Management (corporate strategy), Indian Institute of Management Calcutta</strong><span class="mono">2017</span></li>
+      <li><strong>Master of Computer Applications, Maharshi Dayanand University, Rohtak</strong><span class="mono">2007</span></li>
+      <li><strong>Bachelor of Commerce, University of Delhi</strong><span class="mono">2000</span></li>
+    </ul>
   </section>
 
   <section aria-labelledby="h-cert">
@@ -256,10 +263,10 @@
       <li><strong>CISM</strong><span class="mono">ISACA · 09/2025</span></li>
       <li><strong>CCSP</strong><span class="mono">ISC2 · 10/2021</span></li>
       <li><strong>CCSK</strong><span class="mono">Cloud Security Alliance · 05/2023</span></li>
-      <li><strong>Cybersecurity Architect Expert (SC-100)</strong><span class="mono">Microsoft · 08/2022</span></li>
-      <li><strong>MCSE Cloud Platform and Infra.</strong><span class="mono">Microsoft · 03/2017</span></li>
+      <li><strong>Cybersecurity Architect Expert</strong><span class="mono">Microsoft · 08/2022</span></li>
+      <li><strong>MCSE Cloud Platform and Infra</strong><span class="mono">Microsoft · 03/2017</span></li>
       <li><strong>Architecting Azure Solutions</strong><span class="mono">Microsoft · 03/2017</span></li>
-      <li><strong>Google Cloud Digital Leader</strong><span class="mono">Google Cloud · 02/2023</span></li>
+      <li><strong>Cybersecurity Certificate</strong><span class="mono">Google Cloud · 02/2023</span></li>
     </ul>
   </section>
 
@@ -277,20 +284,14 @@
       </tbody>
     </table>
 
-    <dl class="kv" style="margin-top:1rem">
-      <dt>Cloud and infrastructure</dt><dd>Azure IaaS/PaaS, VNet design, Azure Image Builder, Compute Gallery, Entra ID, Intune, Autopilot, Microsoft 365, Ubuntu, RHEL</dd>
-      <dt>Security and compliance</dt><dd>ISO 27001:2022, PCI-DSS, Wazuh SIEM, Defender XDR, PIM and MFA, Zero Trust, CIS Benchmark, CASB</dd>
-      <dt>DevSecOps</dt><dd>Bicep/ARM, Terraform, Foreman, Puppet, Ansible AWX, Jenkins, Azure DevOps, Power Automate</dd>
-      <dt>AI</dt><dd>Claude, ChatGPT, Gemini, MCP, agentic workflow automation, prompt engineering</dd>
-      <dt>Management</dt><dd>IT roadmaps, team leadership, ITSM/ITIL, vendor and SLA management, budgets, pre-sales and RFPs, executive stakeholders</dd>
-    </dl>
+    
   </section>
 
   <section aria-labelledby="h-extra">
     <h2 id="h-extra">Additional information</h2>
     <dl class="kv">
-      <dt>Talks and writing</dt><dd>Microsoft TechEd India 2014 (SCCM 2012 R2), Microsoft TechReady (Enterprise Mobility + Security), TechGig cloud webinar. Microsoft Docs technical blog and Azure walkthroughs on YouTube. Teaches CISSP and CISM prep at InfoKavach Academy.</dd>
-      <dt>International work</dt><dd>Delivery across Europe (France, Germany, Netherlands, UK), the USA, the Middle East and Asia-Pacific. Valid US business visa. Credentials: <a href="https://www.credly.com/users/rohit-goel.68bb77d5">credly.com/users/rohit-goel.68bb77d5</a></dd>
+      <dt>Talks and writing</dt><dd>Microsoft TechEd India 2014 and TechReady; TechGig cloud webinar; Microsoft Docs technical blog; Azure videos on YouTube; CISSP and CISM teaching.</dd>
+      <dt>International work</dt><dd>Clients in Europe, the USA, the Middle East and Asia-Pacific. Valid US business visa. Credly: <a href="https://www.credly.com/users/rohit-goel.68bb77d5">rohit-goel.68bb77d5</a></dd>
     </dl>
   </section>
 </main>

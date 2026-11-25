@@ -182,6 +182,10 @@
   .skills { border-top: 1px solid var(--ink); }
   .skills > div { display: grid; grid-template-columns: 12rem minmax(0, 1fr); gap: 1rem 2rem; padding: 1.1rem 0; border-bottom: 1px solid var(--rule); }
   .skills dt { font-weight: 600; font-size: .95rem; }
+  .skills dd strong { color: var(--ink); font-weight: 600; }
+  .remit > div { grid-template-columns: 13rem minmax(0, 1fr); }
+  .grp { font-family: var(--mono); font-weight: 500; font-size: .78rem; letter-spacing: .06em; text-transform: uppercase; color: var(--accent); margin: 1.4rem 0 .1rem; }
+  .grp:first-of-type { margin-top: 1.1rem; }
   .skills dd { color: var(--ink-2); font-size: .95rem; }
 
   /* ── CERTS ── */
@@ -227,7 +231,7 @@
     .num:nth-child(even) { padding-left: 0; border-left: 0; }
     .job { grid-template-columns: 1fr; gap: .5rem; }
     .job-when { padding-top: 0; }
-    .skills > div { grid-template-columns: 1fr; gap: .35rem; }
+    .skills > div, .remit > div { grid-template-columns: 1fr; gap: .35rem; }
     .contact-list li { grid-template-columns: 1fr; gap: .1rem; }
     .num b { font-size: 2.5rem; }
   }
@@ -255,10 +259,12 @@
     <nav aria-label="Sections">
       <ul class="nav">
         <li><a href="#about">About</a></li>
+        <li><a href="#remit">What I run</a></li>
         <li><a href="#impact">Impact</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#education">Education</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -273,21 +279,39 @@
   <main id="main">
     <section id="about">
       <div class="sec-head"><h2>About</h2></div>
-      <p class="lede">I run technology operations for a regulated FinTech, and I like making the secure way the <em>easy</em> way.</p>
-      <p class="body-copy">Twenty-one years across FinTech, consulting and enterprise IT, including a decade at Microsoft. My work sits where cloud architecture, security governance (ISO 27001:2022, PCI-DSS) and DevSecOps engineering meet.</p>
-      <p class="body-copy">Lately I build practical automations with Claude, ChatGPT and Gemini, wired into real workflows through MCP and enterprise connectors. I also teach CISSP and CISM prep through InfoKavach Academy.</p>
+      <p class="lede">I lead enterprise IT operations end to end for a regulated FinTech: from the laptop, to the cloud, to the <em>audit</em>.</p>
+      <p class="body-copy">Twenty-one years across FinTech, consulting and enterprise IT, ten of them at Microsoft. I run end-user computing, cloud infrastructure, security and compliance (ISO 27001:2022, PCI-DSS), DevSecOps, service management, automation and AI as one operation, with the budget, vendors and people that come with it.</p>
+      <p class="body-copy">I stay close to the engineering. I have built the pipelines, hardened the images and deployed the tooling myself, which is why the strategy and the implementation tend to match. I also teach CISSP and CISM preparation through InfoKavach Academy.</p>
+      <p class="body-copy">Open to VP or Head of Technical Operations and enterprise IT leadership roles at multinational organisations.</p>
       <div class="cta">
         <a class="btn btn-fill" href="mailto:rohitgoel2019@outlook.com">Email me</a>
         <a class="btn btn-line" href="rohit-kumar-goel-resume.html">View CV (A4)</a>
       </div>
     </section>
 
+    <section id="remit">
+      <div class="sec-head"><h2>What I run</h2></div>
+      <dl class="skills remit reveal">
+        <div><dt>End-user computing and digital workplace</dt><dd>Windows and macOS fleets managed through Microsoft Intune, with Autopilot, Microsoft 365 and Entra ID. Earlier SCCM, VDI and Windows-as-a-Service work at Microsoft. Joiner and access workflows automated end to end.</dd></div>
+        <div><dt>Cloud and infrastructure</dt><dd>Hybrid Azure estate (IaaS, VNet, Entra ID) with Ubuntu and RHEL, run at <strong>99.9%+ uptime</strong>. Foreman-based bare-metal and VM lifecycle tied into Azure Compute Gallery. Azure migrations for enterprise clients before that.</dd></div>
+        <div><dt>Security, risk and compliance</dt><dd>ISO 27001:2022 and PCI-DSS programmes, with <strong>90% fewer incidents</strong> and an audit-ready environment inside 12 months. Wazuh SIEM, Defender for Endpoint, PIM and MFA, CIS-hardened builds, and security awareness at <strong>95% engagement</strong>.</dd></div>
+        <div><dt>DevSecOps and platform engineering</dt><dd>Foreman, Puppet, Ansible AWX, Jenkins, Bicep/ARM and Azure DevOps. Golden images for Ubuntu and RHEL built, hardened, scanned and published automatically, taking release time <strong>from days to under two hours</strong>.</dd></div>
+        <div><dt>Automation and digitalisation</dt><dd>Power Automate for access provisioning (<strong>90% faster, 360+ hours a year saved</strong>), automated image and compliance pipelines, and structured ticketing in place of email.</dd></div>
+        <div><dt>AI and intelligent operations</dt><dd>An AI-driven IT command centre across Microsoft Graph, Defender for Endpoint and Wazuh SIEM for proactive incident management. Hands-on with Claude, ChatGPT and Gemini, connected to real workflows through MCP.</dd></div>
+        <div><dt>Service management</dt><dd>Jira Service Management with SLA tracking, replacing email-based support, for <strong>65% better operational efficiency</strong>. ITIL-based process design.</dd></div>
+        <div><dt>Vendors, budget and commercials</dt><dd>Three overlapping platforms consolidated into one, <strong>cutting licensing by 75%</strong> (about USD 8.6K a year). Vendor and SLA management, plus years of RFP, bid and commercial negotiation experience at Microland.</dd></div>
+        <div><dt>People and stakeholders</dt><dd>Lead cross-functional teams of architects, delivery leads and commercial managers, and coach talent. Report to and brief executives. <strong>Awarded company equity within nine months</strong> of joining FinMkt.</dd></div>
+      </dl>
+    </section>
+
     <section id="impact">
       <div class="sec-head"><h2>Impact at FinMkt</h2></div>
       <div class="numbers">
         <div class="num reveal"><b>90%</b><span>fewer security incidents after an ISO 27001:2022 transformation</span></div>
+        <div class="num reveal"><b>99.9%+</b><span>platform uptime across a hybrid Azure estate</span></div>
         <div class="num reveal"><b>65%</b><span>faster VM provisioning with an automated DevSecOps pipeline</span></div>
-        <div class="num reveal"><b>75%</b><span>lower annual licensing spend, about $8.6K saved</span></div>
+        <div class="num reveal"><b>&lt;2 hrs</b><span>image release cycle, down from days</span></div>
+        <div class="num reveal"><b>75%</b><span>lower annual licensing spend, about USD 8.6K saved</span></div>
         <div class="num reveal"><b>360+</b><span>manual hours saved each year through Power Automate</span></div>
       </div>
     </section>
@@ -296,77 +320,108 @@
       <div class="sec-head"><h2>Experience</h2></div>
 
       <article class="job reveal">
-        <p class="job-when mono">2024 — Now</p>
+        <p class="job-when mono">01/2024 — Now</p>
         <div>
           <h3>FinMkt Inc.</h3>
-          <p class="what">Head of Technical Operations · Hyderabad</p>
+          <p class="what">Head of Technical Operations · Hyderabad · FinTech, lending and credit SaaS platform</p>
+
+          <h4 class="grp">Strategy and governance</h4>
           <ul>
-            <li>Own the multi-year technology roadmap, aligned to ISO 27001:2022 and PCI-DSS.</li>
-            <li>Run a hybrid Azure environment (IaaS, VNet, Entra ID) and Windows and macOS fleets through Intune, at <strong>99.9%+ uptime</strong>.</li>
-            <li>Built a DevSecOps toolchain (Foreman, Puppet, Ansible AWX, Jenkins, Bicep/ARM) that <strong>cut VM provisioning time by 65%</strong>.</li>
-            <li>Automated Linux image releases on Azure DevOps, covering CIS hardening, ClamAV, Wazuh and Compute Gallery. Releases went <strong>from days to under two hours</strong>.</li>
-            <li>Led a security transformation to <strong>90% fewer incidents</strong> and an audit-ready posture within 12 months.</li>
+            <li>Own the enterprise IT strategy and multi-year technology roadmap, aligning infrastructure investment with business growth and the ISO 27001:2022 and PCI-DSS mandates.</li>
+            <li>Led a security transformation programme aligned to ISO 27001:2022: <strong>90% fewer security incidents</strong> and a fully audit-ready environment within 12 months.</li>
           </ul>
-          <details class="more">
-            <summary><span class="t-closed">More from this role</span><span class="t-open">Show less</span></summary>
-            <ul>
-              <li>Deployed an AI-driven IT command centre across Microsoft Graph, Defender for Endpoint and Wazuh SIEM.</li>
-              <li>Merged three overlapping tools into one, <strong>cutting licensing 75%</strong> (about $8.6K a year).</li>
-              <li>Automated access provisioning with Power Automate: <strong>90% faster, 360+ hours saved a year</strong>.</li>
-              <li>Moved IT support from email to Jira Service Management, lifting efficiency by <strong>65%</strong>.</li>
-              <li>Reached <strong>95% engagement</strong> in security awareness training and reduced phishing susceptibility.</li>
-              <li><strong>Awarded company equity within nine months</strong> of joining.</li>
-            </ul>
-          </details>
+
+          <h4 class="grp">End-user computing and cloud</h4>
+          <ul>
+            <li>Architected and scaled a hybrid Azure environment (IaaS, VNet, Entra ID) and run end-to-end operations across Windows and macOS fleets through Microsoft Intune, at <strong>99.9%+ platform uptime</strong>.</li>
+            <li>Run a Foreman-based bare-metal and VM lifecycle system integrated with Azure Compute Gallery, enforcing Puppet configuration at scale: ClamAV, Wazuh agent deployment and OS hardening across the fleet.</li>
+          </ul>
+
+          <h4 class="grp">DevSecOps and automation</h4>
+          <ul>
+            <li>Built a full DevSecOps toolchain covering provisioning (Foreman with the Azure RM plugin, Azure Image Builder), configuration management (Puppet with Bitbucket-synced module pipelines), orchestration (Ansible AWX) and pipeline automation (Jenkins, Bicep/ARM). Hardened golden images for Ubuntu and RHEL <strong>cut VM provisioning time by about 65%</strong>.</li>
+            <li>Designed a Linux custom image lifecycle programme on Azure DevOps: automated build, hardening, validation and publishing to Azure Compute Gallery, with CIS benchmark compliance, ClamAV scanning, Wazuh integration and Azure Monitor Agent installation built in. Manual builds are gone and releases went <strong>from days to under two hours</strong>.</li>
+            <li>Automated employee access workflows with Power Automate: <strong>90% faster provisioning and 360+ manual hours saved a year</strong> across IT operations.</li>
+          </ul>
+
+          <h4 class="grp">AI and service management</h4>
+          <ul>
+            <li>Deployed an AI-driven IT command centre integrating Microsoft Graph API, Defender for Endpoint and Wazuh SIEM for proactive incident management and real-time infrastructure visibility.</li>
+            <li>Launched Jira Service Management to replace unstructured email-based support, improving SLA adherence and lifting operational efficiency by <strong>65%</strong>.</li>
+          </ul>
+
+          <h4 class="grp">Cost, people and culture</h4>
+          <ul>
+            <li>Consolidated three overlapping platforms into one, <strong>cutting annual licensing by 75%</strong> (about USD 8.6K) while improving the user experience and reducing support load.</li>
+            <li>Reached <strong>95% engagement</strong> in cybersecurity awareness initiatives, measurably reducing phishing susceptibility.</li>
+            <li><strong>Awarded company equity within nine months</strong> of joining, in recognition of leadership in IT transformation and security programme maturity.</li>
+          </ul>
         </div>
       </article>
 
       <article class="job reveal">
-        <p class="job-when mono">2018 — 2023</p>
+        <p class="job-when mono">05/2018 — 12/2023</p>
         <div>
           <h3>Microland Limited</h3>
-          <p class="what">Client Solutions Director · Bengaluru</p>
+          <p class="what">Client Solutions Director · Bengaluru · IT managed services, global clients</p>
           <ul>
-            <li>Led solution architecture for enterprise accounts across Europe, MEA and Asia-Pacific in security (SIEM, EDR, IAM), hybrid cloud and the modern workplace.</li>
-            <li>Owned bids end to end, from RFP response and pricing to solution defence, with a <strong>consistently above-average win rate</strong> on multi-million dollar pursuits.</li>
-            <li>Designed Day 0 to Day 2 transformation roadmaps for <strong>10+ enterprise clients</strong>.</li>
-            <li>Built reusable accelerators in cloud security and digital workplace that shortened time to proposal.</li>
+            <li>Directed client solution architecture across cybersecurity (SIEM, EDR, IAM), hybrid cloud and data centre (Azure, VMware, DC transformation) and the modern workplace (M365, Intune, Autopilot) for enterprise accounts in Europe, MEA and Asia-Pacific.</li>
+            <li>Owned bid management and proposal delivery end to end (RFP responses, commercial negotiation, solution defence) with a <strong>consistently above-average win rate</strong> on multi-million dollar TCV pursuits.</li>
+            <li>Designed Day 0 (assessment and architecture), Day 1 (implementation and cutover) and Day 2 (managed operations and continuous improvement) roadmaps for <strong>10+ enterprise clients</strong>, across fixed price, dedicated, hybrid and shared services models.</li>
+            <li>Developed proprietary accelerators and offerings in cloud security and digital workplace, shortening time to proposal and sharpening go-to-market.</li>
+            <li>Delivered infrastructure transformation, hybrid cloud migration, security tooling (SIEM, endpoint, IAM) and DC, cloud and SOC operations engagements on scope, budget and timeline.</li>
+            <li>Led cross-functional teams of architects, delivery leads and commercial managers across geographies, and drove internal process improvements that raised delivery efficiency.</li>
           </ul>
         </div>
       </article>
 
       <article class="job reveal">
-        <p class="job-when mono">2010 — 2018</p>
+        <p class="job-when mono">06/2010 — 05/2018</p>
         <div>
           <h3>Microsoft</h3>
-          <p class="what">Consultant, Cloud &amp; Enterprise Platforms · Hyderabad</p>
+          <p class="what">Consultant, Cloud &amp; Enterprise Platforms · Hyderabad · US, Europe, MEA and Asia-Pacific delivery</p>
           <ul>
-            <li>PEAT Architect and pre-sales architect on <strong>50+ engagements</strong> across Azure, security, modern workplace and virtualization.</li>
-            <li>Led Azure migrations for clients in the USA, France, Germany, Netherlands, UAE, Qatar, Saudi Arabia, Singapore and Australia.</li>
-            <li><strong>Speaker at Microsoft TechEd India 2014</strong> on SCCM 2012 R2 best practices, and at TechReady on Enterprise Mobility + Security.</li>
-            <li>Reviewed Gold Partner architecture designs; wrote for the Microsoft Docs technical blog and published Azure walkthroughs on YouTube.</li>
+            <li>PEAT (Partner Engineering Alignment Team) Architect and pre-sales solution architect across <strong>50+ engagements</strong> in Azure cloud foundation, security, modern workplace and virtualisation.</li>
+            <li>Led Azure migrations (lift-and-shift, hybrid, cloud-native) for enterprise clients in the USA, France, Germany, the Netherlands, the UAE, Qatar, Saudi Arabia, Singapore and Australia.</li>
+            <li>Designed and delivered Azure IaaS, Microsoft security (DLP, CASB, AIP, Conditional Access, PIM, MFA, BitLocker), Hyper-V, SQL clustering, SCCM, Intune and MDM, Office 365, VDI and Windows-as-a-Service.</li>
+            <li>Produced HLDs, LLDs, SOWs, BOMs, WBS, SOPs and effort estimates for complex multi-phase infrastructure transformation programmes.</li>
+            <li><strong>Speaker at Microsoft TechEd India 2014</strong> on SCCM 2012 R2, and at TechReady on Enterprise Mobility + Security.</li>
+            <li>Reviewed Gold Partner architecture designs under PEAT to keep technical quality high across the partner ecosystem.</li>
           </ul>
         </div>
       </article>
 
       <article class="job reveal">
-        <p class="job-when mono">2008 — 2010</p>
+        <p class="job-when mono">10/2008 — 05/2010</p>
         <div>
           <h3>Hewlett-Packard India</h3>
           <p class="what">Technology Consultant · Bengaluru</p>
           <ul>
-            <li>Delivered Microsoft security, VMware virtualization and data centre transformation work, with full HLD, LLD, SOW and proof-of-concept documentation.</li>
+            <li>Designed and implemented cost-effective Microsoft technology solutions for enterprise clients across security, VMware virtualisation, data centre consolidation and migration, and V2V and P2V migrations.</li>
+            <li>Delivered full project documentation (HLD, LLD, SOW, WBS) and proofs of concept, managing stakeholders through delivery.</li>
           </ul>
         </div>
       </article>
 
       <article class="job reveal">
-        <p class="job-when mono">2005 — 2008</p>
+        <p class="job-when mono">02/2005 — 09/2008</p>
         <div>
           <h3>Microsoft</h3>
           <p class="what">Partner Technical Consultant · Bengaluru</p>
           <ul>
-            <li>Technical account manager for 20+ Gold Partners, and trusted advisor on SCCM and Microsoft security.</li>
+            <li>Technical account manager for <strong>20+ Microsoft Gold Partners</strong>: advisory, escalation management and account planning.</li>
+            <li>Trusted advisor on SCCM and Microsoft security: reviewed technical documents, led architecture discussions and resolved partner escalations with Microsoft engineering.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="job reveal">
+        <p class="job-when mono">02/2002 — 02/2005</p>
+        <div>
+          <h3>Comcon Industries</h3>
+          <p class="what">Chief Project Engineer · New Delhi</p>
+          <ul>
+            <li>Delivered Indian Government broadcast infrastructure: FM studios, newsroom digitisation and automation of the Gyan Darshan satellite education channel, including highly available database services, network security and AV infrastructure.</li>
           </ul>
         </div>
       </article>
@@ -375,33 +430,54 @@
     <section id="skills">
       <div class="sec-head"><h2>Skills</h2></div>
       <dl class="skills reveal">
-        <div><dt>Cloud &amp; infrastructure</dt><dd>Azure IaaS/PaaS, VNet architecture, Azure Image Builder, Compute Gallery, Entra ID, Intune, Autopilot, M365</dd></div>
-        <div><dt>Security &amp; compliance</dt><dd>ISO 27001:2022, PCI-DSS, Wazuh SIEM, Defender XDR, PIM and MFA, Zero Trust, CIS Benchmark, CASB</dd></div>
-        <div><dt>DevSecOps &amp; automation</dt><dd>Bicep/ARM, Terraform, Foreman, Puppet, Ansible AWX, Jenkins, Azure DevOps, Power Automate</dd></div>
+        <div><dt>End-user computing</dt><dd>Intune, Autopilot, Windows and macOS fleet management, Microsoft 365, Entra ID, SCCM, VDI, Windows-as-a-Service</dd></div>
+        <div><dt>Cloud and infrastructure</dt><dd>Azure IaaS/PaaS, VNet architecture, Azure Image Builder, Compute Gallery, Hyper-V, VMware, SQL clustering, data centre transformation</dd></div>
+        <div><dt>Security and compliance</dt><dd>ISO 27001:2022, PCI-DSS, Wazuh SIEM, Defender XDR, PIM and MFA, Zero Trust, CIS Benchmark, CASB, DLP</dd></div>
+        <div><dt>DevSecOps and automation</dt><dd>Bicep/ARM, Terraform, Foreman, Puppet, Ansible AWX, Jenkins, Azure DevOps, Power Automate</dd></div>
         <div><dt>Linux</dt><dd>Ubuntu, RHEL, ClamAV, Auditd, Fail2Ban, Wazuh agent, Azure Monitor Agent, Lynis</dd></div>
-        <div><dt>Generative &amp; agentic AI</dt><dd>Claude, ChatGPT, Gemini, MCP and AI connectors, agentic workflow automation, prompt engineering, AI-driven operations</dd></div>
-        <div><dt>Leadership</dt><dd>IT roadmaps, team building, ITSM/ITIL, vendor management, pre-sales and RFPs, budget optimization, executive stakeholders</dd></div>
-        <div><dt>Teaching</dt><dd>InfoKavach Academy, CISSP and CISM prep, YouTube, LinkedIn writing, security awareness</dd></div>
+        <div><dt>Generative and agentic AI</dt><dd>Claude, ChatGPT, Gemini, MCP and AI connectors, agentic workflow automation, prompt engineering, AI-driven operations</dd></div>
+        <div><dt>Service management</dt><dd>ITSM and ITIL process design, Jira Service Management, SLA management</dd></div>
+        <div><dt>Leadership and commercial</dt><dd>IT strategy and roadmaps, team leadership and talent development, executive stakeholder communication, vendor management, budget and cost optimisation, pre-sales, RFPs and solution architecture</dd></div>
+        <div><dt>Teaching</dt><dd>InfoKavach Academy, CISSP and CISM preparation, YouTube, LinkedIn writing, security awareness</dd></div>
       </dl>
     </section>
 
     <section id="certifications">
       <div class="sec-head"><h2>Certifications</h2></div>
       <ul class="certs">
-        <li class="cert"><div class="badge"><img src="cissp.png" alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fallback',textContent:'ISC2'}))"></div><b>Certified Information Systems Security Professional</b><small class="mono">CISSP · 2021</small></li>
-        <li class="cert"><div class="badge"><img src="certified-information-security-manager-cism.png" alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fallback',textContent:'ISACA'}))"></div><b>Certified Information Security Manager</b><small class="mono">CISM · 2025</small></li>
-        <li class="cert"><div class="badge"><img src="ccsp.png" alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fallback',textContent:'ISC2'}))"></div><b>Certified Cloud Security Professional</b><small class="mono">CCSP · 2021</small></li>
-        <li class="cert"><div class="badge"><img src="ccsk.png" alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fallback',textContent:'CSA'}))"></div><b>Certificate of Cloud Security Knowledge</b><small class="mono">CCSK · 2023</small></li>
-        <li class="cert"><div class="badge"><img src="mcp.png" alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fallback',textContent:'Microsoft'}))"></div><b>Microsoft Cybersecurity Architect Expert</b><small class="mono">SC-100 · 2022</small></li>
-        <li class="cert"><div class="badge"><img src="https://images.credly.com/size/340x340/images/987adb7e-49be-4e24-b67e-55986bd3fe66/image.png" alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fallback',textContent:'Microsoft'}))"></div><b>Solutions Expert: Cloud Platform &amp; Infrastructure</b><small class="mono">MCSE · 2017</small></li>
-        <li class="cert"><div class="badge"><img src="Google.png" alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fallback',textContent:'Google Cloud'}))"></div><b>Google Cloud Cybersecurity Certificate</b><small class="mono">Google · 2023</small></li>
-        <li class="cert"><div class="badge"><span class="fallback">IIM Calcutta</span></div><b>Executive Program in Business Management</b><small class="mono">IIM Calcutta · 2017</small></li>
+        <li class="cert"><div class="badge"><img src="cissp.png" alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fallback',textContent:'ISC2'}))"></div><b>Certified Information Systems Security Professional</b><small class="mono">CISSP · ISC2 · 01/2021</small></li>
+        <li class="cert"><div class="badge"><img src="certified-information-security-manager-cism.png" alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fallback',textContent:'ISACA'}))"></div><b>Certified Information Security Manager</b><small class="mono">CISM · ISACA · 09/2025</small></li>
+        <li class="cert"><div class="badge"><img src="ccsp.png" alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fallback',textContent:'ISC2'}))"></div><b>Certified Cloud Security Professional</b><small class="mono">CCSP · ISC2 · 10/2021</small></li>
+        <li class="cert"><div class="badge"><img src="ccsk.png" alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fallback',textContent:'CSA'}))"></div><b>Certificate of Cloud Security Knowledge</b><small class="mono">CCSK · CSA · 05/2023</small></li>
+        <li class="cert"><div class="badge"><img src="mcp.png" alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fallback',textContent:'Microsoft'}))"></div><b>Microsoft Cybersecurity Architect Expert</b><small class="mono">SC-100 · 08/2022</small></li>
+        <li class="cert"><div class="badge"><img src="https://images.credly.com/size/340x340/images/987adb7e-49be-4e24-b67e-55986bd3fe66/image.png" alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fallback',textContent:'Microsoft'}))"></div><b>MCSE: Cloud Platform &amp; Infrastructure</b><small class="mono">Microsoft · 03/2017</small></li>
+        <li class="cert"><div class="badge"><span class="fallback">Microsoft</span></div><b>Specialist: Architecting Microsoft Azure Solutions</b><small class="mono">Microsoft · 03/2017</small></li>
+        <li class="cert"><div class="badge"><img src="Google.png" alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fallback',textContent:'Google Cloud'}))"></div><b>Google Cloud Cybersecurity Certificate</b><small class="mono">Google Cloud · 02/2023</small></li>
       </ul>
+    </section>
+
+    <section id="education">
+      <div class="sec-head"><h2>Education</h2></div>
+      <dl class="skills reveal">
+        <div><dt class="mono">2017</dt><dd><strong>Executive Programme in Business Management</strong>, corporate strategy. Indian Institute of Management Calcutta.</dd></div>
+        <div><dt class="mono">2007</dt><dd><strong>Master of Computer Applications</strong>. Maharshi Dayanand University, Rohtak.</dd></div>
+        <div><dt class="mono">2000</dt><dd><strong>Bachelor of Commerce</strong>, accounting and business management. University of Delhi.</dd></div>
+      </dl>
+    </section>
+
+    <section id="talks">
+      <div class="sec-head"><h2>Speaking and writing</h2></div>
+      <dl class="skills reveal">
+        <div><dt>Microsoft TechEd India 2014</dt><dd>Bengaluru. “Best Practices and Notes from the Field: SCCM 2012 R2”.</dd></div>
+        <div><dt>Microsoft TechReady</dt><dd>Sessions on Enterprise Mobility + Security (EMS).</dd></div>
+        <div><dt>TechGig webinar</dt><dd>“Cloud Computing Series: Deployment Models and Service Models in Cloud Computing”.</dd></div>
+        <div><dt>Writing and video</dt><dd>Microsoft Docs technical blog (azure.microsoft.com/archive/blogs/rogoel), plus Azure and cloud architecture walkthroughs on YouTube.</dd></div>
+      </dl>
     </section>
 
     <section id="reach">
       <div class="sec-head"><h2>Where I've worked</h2></div>
-      <p class="reach reveal">Client work in <strong>14 countries</strong>: United States, France, Germany, Netherlands, United Kingdom, UAE, Qatar, Saudi Arabia, Singapore, Australia, Thailand, Vietnam, Indonesia and India.</p>
+      <p class="reach reveal">Enterprise IT engagements across <strong>North America</strong> (USA), <strong>Europe</strong> (France, Germany, Netherlands, UK), the <strong>Middle East</strong> (UAE, Qatar and Saudi Arabia, including government) and <strong>Asia-Pacific</strong> (Singapore, Australia, Thailand, Vietnam, Indonesia, India). Languages: English (professional proficiency) and Hindi (native).</p>
     </section>
 
     <section id="contact">
